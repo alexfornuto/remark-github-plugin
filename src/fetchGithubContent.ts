@@ -16,7 +16,9 @@ export const fetchGithubFile =
     try {
       response = await fetchFunction(fetchUrl, {
         headers: {
-          Authorization: `token ${token}`,
+          if (token !== null) {
+            Authorization: `token ${token}`,
+          }
         },
       });
 
